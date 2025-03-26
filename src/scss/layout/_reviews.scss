@@ -1,2 +1,13 @@
-.review-card {
+.review-grid {
+  @media (min-width: $sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.team-member {
+  &__img {
+    @extend .ar-3-4;
+    max-width: 160px;
+    margin-bottom: 10px;
+  }
 }

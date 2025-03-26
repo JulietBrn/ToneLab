@@ -20,6 +20,8 @@ $xl: 1200px;
 h1,
 h2,
 h3 {
+  text-transform: uppercase;
+  font-weight: 500;
   // font-family: 'Prata', serif;
 }
 
@@ -42,7 +44,6 @@ body {
   --header-padding: 10px;
   @media (min-width: $lg) {
     --header-h: 70px;
-    --header-padding: 20px;
   }
 }
 
@@ -82,6 +83,13 @@ a {
 .section {
   padding-top: 60px;
   padding-bottom: 80px;
+}
+
+.section_white {
+  --bg-color: white;
+  --text-color: black;
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 h1,
@@ -124,7 +132,9 @@ a {
 .mw-600 {
   max-width: 600px;
 }
-
+.mw-60 {
+  max-width: 60px;
+}
 p {
   margin-bottom: 8px;
 }
@@ -135,9 +145,12 @@ p {
     font-size: 32px;
   }
 
-  line-height: 120%;
+  line-height: 100%;
+  text-transform: uppercase;
 }
-
+.ttu {
+  text-transform: uppercase;
+}
 .title-wrap {
   margin-bottom: 32px;
 }
@@ -164,4 +177,26 @@ p {
 
 .mt-24 {
   margin-top: 24px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.img-3-item {
+  text-transform: uppercase;
+}
+
+.services-item {
+  background-image: url(assets/svg/check.svg);
+  background-repeat: no-repeat;
+  background-position: left center;
+
+  padding-left: 2em;
+  margin-left: 10px;
+}
+
+.equipment-item {
+  list-style-type: disc;
+  margin-left: 2em;
 }

@@ -6,6 +6,7 @@
   border-radius: var(--border-radius-md);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: white;
+  color: black;
 
   &__answer {
     max-height: 0;
@@ -46,4 +47,15 @@
       flex-shrink: 0;
     }
   }
+}
+
+.promotions-grid {
+  position: relative;
+}
+
+.bow {
+  position: absolute;
+  right: 5%;
+  top: 0;
+  transform: rotate(25deg) translateY(-90%);
 }
