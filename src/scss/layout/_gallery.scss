@@ -53,11 +53,10 @@
     /* pad the scroller so last items can finish */
     padding-block-end: 50vh;
   }
-}
-
-html {
-  /* fixes transforms causing x scrollbar */
-  overflow-x: hidden;
+  html {
+    /* fixes transforms causing x scrollbar */
+    overflow-x: hidden;
+  }
 }
 
 .grid-center {
