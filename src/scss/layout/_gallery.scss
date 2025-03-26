@@ -18,25 +18,26 @@
     transform: scale(0.8) rotateZ(90deg) translateY(15vh);
   }
 }
+@media screen and (min-width: $md) {
+  .gallery-item {
+    @media (prefers-reduced-motion: no-preference) {
+      @supports (animation-timeline: view()) {
+        animation: in-from-middle both;
+        animation-timeline: view();
+        animation-range: contain 0% contain 50%;
+        transform-origin: 50% 100vh;
 
-.gallery-item {
-  @media (prefers-reduced-motion: no-preference) {
-    @supports (animation-timeline: view()) {
-      animation: in-from-middle both;
-      animation-timeline: view();
-      animation-range: contain 0% contain 50%;
-      transform-origin: 50% 100vh;
+        &:nth-child(3n + 1) {
+          animation-name: in-from-left;
+        }
 
-      &:nth-child(3n + 1) {
-        animation-name: in-from-left;
-      }
+        &:nth-child(3n + 2) {
+          animation-name: in-from-middle;
+        }
 
-      &:nth-child(3n + 2) {
-        animation-name: in-from-middle;
-      }
-
-      &:nth-child(3n + 3) {
-        animation-name: in-from-right;
+        &:nth-child(3n + 3) {
+          animation-name: in-from-right;
+        }
       }
     }
   }
@@ -49,14 +50,16 @@
     place-content: center;
     grid-template-columns: repeat(3, var(--cell));
     grid-auto-rows: var(--cell);
+    min-block-size: 100%;
+  }
+  .section.gallery {
+    block-size: 100%;
+  }
+}
 
-    /* pad the scroller so last items can finish */
-    padding-block-end: 50vh;
-  }
-  html {
-    /* fixes transforms causing x scrollbar */
-    overflow-x: hidden;
-  }
+// html,
+body {
+  overflow-x: hidden;
 }
 
 .grid-center {

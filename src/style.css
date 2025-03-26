@@ -29,7 +29,6 @@
   box-sizing: border-box;
 }
 
-@font-face {}
 h1,
 h2,
 h3 {
@@ -433,7 +432,7 @@ td {
     transform: scale(0.8) rotateZ(90deg) translateY(15vh);
   }
 }
-@media (prefers-reduced-motion: no-preference) {
+@media screen and (min-width: 768px) and (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
     .gallery-item {
       animation: in-from-middle both;
@@ -452,7 +451,6 @@ td {
     }
   }
 }
-
 @layer support {
   .gallery-grid {
     --cell: min(33vw, 250px);
@@ -460,14 +458,16 @@ td {
     place-content: center;
     grid-template-columns: repeat(3, var(--cell));
     grid-auto-rows: var(--cell);
-    /* pad the scroller so last items can finish */
-    padding-block-end: 50vh;
+    min-block-size: 100%;
   }
-  html {
-    /* fixes transforms causing x scrollbar */
-    overflow-x: hidden;
+  .section.gallery {
+    block-size: 100%;
   }
 }
+body {
+  overflow-x: hidden;
+}
+
 .grid-center {
   align-items: center;
 }
